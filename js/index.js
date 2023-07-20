@@ -54,10 +54,10 @@ function createCalendar() {
 			common: {
 				backgroundColor: 'rgb(30, 30, 30)',
 				border: '1px solid #404040',
-				dayName: { color: 'rgb(231, 231, 231)' },
-				holiday: { color: 'rgb(231, 231, 231)' },
-				saturday: { color: 'rgb(231, 231, 231)' },
-				today: { color: 'rgb(231, 231, 231)' },
+				dayName: { color: 'rgb(255, 255, 255)' },
+				holiday: { color: 'rgb(255, 255, 255)' },
+				saturday: { color: 'rgb(255, 255, 255)' },
+				today: { color: 'rgb(255, 255, 255)' },
 			},
 			month: {
 				dayExceptThisMonth: { color: 'rgb(196, 196, 196)' },

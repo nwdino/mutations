@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Calendar of Mutated Expeditions for the New World game</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
+	<style rel="stylesheet">
+	html, body {
+		background-color: #1E1E1E;
+		color: #C4C4C4;
+	}
+	body {
+	    font-family: "Segoe UI", system-ui;
+	}
+	a, a:active, a:visited {
+		color: #E7E7E7;
+		text-decoration: underline;
+	}
+	a:hover {
+		color: #fff;
+	}
+	#month-name {
+		color: #E7E7E7;
+		background: #3C3C3C;
+		font-size: 16px;
+		padding: 5px;
+		margin: 5px;
+		text-align: center;
+	}
+	#calendar {
+		border-bottom: 1px solid rgb(64, 64, 64);
+	}
+	.footer {
+		text-align: center;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-size: 14px;
+	}
+	.footer p {
+		margin-bottom: 4px;
+	}
+	.toastui-calendar-day-names.toastui-calendar-month {
+		padding: 0;
+	}
+	.toastui-calendar-day-name-item {
+		font-weight: bold;
+	}
+	.toastui-calendar-template-time strong {
+		display: none;
+	}
+	.toastui-calendar-grid-cell-date .toastui-calendar-weekday-grid-date.toastui-calendar-weekday-grid-date-decorator {
+		background-color: rgb(60, 60, 60);
+		border-radius: 0;
+		height: 24px;
+	}
+	</style>
+</head>
+<body>
+
+<div id="month-name">&nbsp;</div>
+<div id="calendar" style="height: 600px;"></div>
+<div class="footer">
+	<p>Calendar of Mutated Expeditions for the New World game</p>
+	<p><span>Created by dinozavar@Barri | <span><a href="https://github.com/nwstuff/mutations">GitHub Page</a></span></p>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/luxon@1/build/global/luxon.min.js"></script>
+<script src="js/events.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

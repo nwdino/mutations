@@ -1,9 +1,9 @@
 const Calendar = tui.Calendar;
 let calendar = null;
 
-var DateTime = luxon.DateTime;
+let DateTime = luxon.DateTime;
 
-var key = 'AIzaSyDS-E--dicylauPwY5xWawXtPwuUfJlJG0';
+let key = 'AIzaSyDS-E--dicylauPwY5xWawXtPwuUfJlJG0';
 
 function monthName() {
 	const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -18,12 +18,15 @@ async function fetchGoogleCalendarEvents() {
 }
 
 function convertToTuiEvent(googleEvent) {
+	const end = googleEvent.end.dateTime || googleEvent.end.date;
+	let exclEnd = DateTime.fromISO(end).minus({ seconds: 1 });
+
 	return {
 		id: googleEvent.id,
 		calendarId: googleEvent.calendarId,
 		title: googleEvent.summary,
 		start: googleEvent.start.dateTime || googleEvent.start.date,
-		end: googleEvent.end.dateTime || googleEvent.end.date,
+		end: exclEnd.toJSDate(),
 		backgroundColor: getColor(googleEvent.summary),
 	};
 }
@@ -40,20 +43,11 @@ function createCalendar() {
 		usageStatistics: false,
 		isReadOnly: true,
 		defaultView: 'month',
-		timezone: {
-			zones: [
-				{
-					timezoneName: 'UTC',
-					displayLabel: 'UTC',
-				},
-			],
-		},
 		month: {
 			startDayOfWeek: 1,
 			visibleEventCount: 6,
 		},
 		eventFilter: (event) => {
-			console.log(event);
 			return isMutation(event.title);
 		},
 		theme: {
